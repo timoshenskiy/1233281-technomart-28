@@ -58,7 +58,11 @@
       <form action="https://echo.htmlacademy.ru" method="get">
         <fieldset>
           <legend>Цена:</legend>
-          <!--Здесь будет фильтр по цене-->
+          <!--Здесь будет ползунок цен -->
+          <label class="visually-hidden" for="filter-min-price">Минимальная цена</label>
+          <input type="number" value="0" id="filter-min-price" name="min-price">
+          <label class="visually-hidden" for="filter-min-price">Максимальная цена</label>
+          <input type="number" value="300" id="filter-max-price" name="max-price">
         </fieldset>
         <fieldset>
           <legend>Производители:</legend>
@@ -103,7 +107,15 @@
     </section>
     <section>
       <h2>Сортировка</h2>
-      <!--Здесь будет сортировка-->
+      <ul aria-label="Выбор типа сортировки">
+        <li><a>По цене</a></li>
+        <li><a href="#">По типу</a></li>
+        <li><a href="#">По функционалу</a></li>
+      </ul>
+      <ul aria-label="Выбор направления сортировки">
+        <li><a>По возрастанию</a></li>
+        <li><a href="#">По убыванию</a></li>
+      </ul>
     </section>
     <section>
       <h2>Товары</h2>
@@ -188,7 +200,12 @@
           <span>12500 Р.</span>
         </li>
       </ul>
-      <!--Здесь будет блок со страницами-->
+      <ol aria-label="Переход на другую страницу">
+        <li><a aria-label="Перейти на страницу 1">1</a></li>
+        <li><a href="#" aria-label="Перейти на страницу 2">2</a></li>
+        <li><a href="#" aria-label="Перейти на страницу 3">3</a></li>
+        <li><a href="#" aria-label="Перейти на следующую страницу">Следующая</a></li>
+      </ol>
     </section>
     <section>
       <h2>Пара слов о перфораторах</h2>
