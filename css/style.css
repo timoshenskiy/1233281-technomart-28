@@ -991,6 +991,27 @@ img {
   background-color: var(--basic-red);
 }
 
+/* Краткая информация о продукте */
+.product-info {
+  background-color: var(--basic-white);
+}
+
+.product-info__title {
+  font-family: "Cuprum", Arial, sans-serif;
+  text-transform: uppercase;
+  font-size: 30px;
+  line-height: 30px;
+  font-weight: normal;
+}
+
+.product-info__text {
+  font-family: "PT Sans", Arial, sans-serif;
+  font-size: 13px;
+  line-height: 24px;
+
+}
+
+
 
 
 /* Футер */
