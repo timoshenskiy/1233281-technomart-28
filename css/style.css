@@ -11,7 +11,8 @@
   --basic-lightgrey: #C5C5C5;
   --basic-white: #F1F5F7;
   --basic-darkgrey: #A9A9A9;
-  --special-yellow: #FFBF47;
+  --basic-yellow: #FFBF47;
+  --special-yellow: #FFC047;
   --special-blue: #3BBCE3;
   --special-pink: #DC91D8;
   --special-lightgreen: #8ED78F;
@@ -21,8 +22,15 @@
   --navblue: #293449;
   --navdarkblue: #1D2739;
   --heading-background: #F2F6F8;
+  --special-heading-background: #F9F5F0;
+  --special-white-background: #F7F3EC;
+  --shadow: rgba(0, 0, 0, 0.15);
+  --black-background-opacity: rgba(0, 0, 0, 0.25);
+  --black-opacity: rgba(0, 0, 0, 0.30);
+  --grey-link-opacity: rgba(255, 255, 255, 0.30);
+  --special-grey-link-opacity: rgba(197, 197, 197, 0.30);
+  --special-active-grey-link-opacity:rgba(169, 169, 169, 0.30);
   --success: #5FBB2D;
-  --warning: #FFBF47;
   --error: #BA2732;
 
 }
@@ -85,7 +93,7 @@ img {
 
 .search__input::placeholder {
   color: var(--basic-background);
- opacity: 100%;
+  opacity: 100%;
 }
 
 .search__input:focus {
@@ -281,6 +289,196 @@ img {
   opacity: 50%;
 }
 
+/* Категории */
+.categories {
+  font-family: "Cuprum", Arial, sans-serif;
+  color: var(--basic-background);
+}
+
+.categories__list {
+  list-style: none;
+}
+
+.categories__item--materials {
+  background-color: var(--basic-yellow);
+}
+
+.categories__item--tool {
+  background-color: var(--special-blue);
+}
+
+.categories__item--equipment {
+  background-color: var(--special-pink);
+}
+
+.categories__item--discounts {
+  background-color: var(--special-lightgreen);
+}
+
+.categories__item--delivery {
+  background-color: var(--special-yellow);
+}
+
+.categories__item-title {
+  font-size: 24px;
+  line-height: 30px;
+}
+.categories__item-title::after {
+  content: "";
+  display: inline-block;
+  background-repeat: no-repeat;
+}
+
+.categories__item-title--materials::after {
+  width: 44px;
+  height: 65px;
+  background-image: url("../img/icon-1.svg");
+}
+
+.categories__item-title--tool::after {
+  width: 75px;
+  height: 61px;
+  background-image: url("../img/icon-2.svg");
+
+}
+
+.categories__item-title--equipment::after {
+  width: 78px;
+  height: 62px;
+  background-image: url("../img/icon-3.svg");
+
+}
+
+.categories__item-title--discounts::after {
+  width: 59px;
+  height: 72px;
+  background-image: url("../img/icon-4.svg");
+
+}
+
+.categories__item-title--delivery::after {
+  width: 78px;
+  height: 63px;
+  background-image: url("../img/icon-5.svg");
+
+}
+
+.categories__item-link {
+  text-transform: uppercase;
+  font-size: 14px;
+  line-height: 18px;
+  background-color: var(--grey-link-opacity);
+  color: var(--basic-background);
+}
+
+.categories__item-link:hover {
+  background-color: var(--special-grey-link-opacity);
+  color: var(--basic-background);
+}
+
+.categories__item-link:active {
+  background-color: var(--special-active-grey-link-opacity);
+  color: var(--basic-background);
+}
+
+.categories__item-title {
+  font-size: 24px;
+  line-height: 30px;
+}
+
+/* Слайдер */
+.slider__item-container {
+  display: none;
+}
+
+.slider__radio:checked ~ .slider__item-container {
+  display: block;
+  width: 620px;
+  height: 266px;
+  background-repeat: no-repeat;
+
+}
+
+.slider__radio--first:checked ~ .slider__item-container {
+  background-image: url("../img/slider-perforatori.jpg");
+}
+.slider__radio--second:checked ~ .slider__item-container {
+  background-image: url("../img/slider-dreli.jpg");
+}
+
+.slider__list {
+  list-style: none;
+}
+
+.slider__item-text-container {
+  background-color: var(--black-background-opacity);
+}
+
+.slider__item-title {
+  font-size: 36px;
+  line-height: 36px;
+  text-transform: uppercase;
+}
+
+.slider__item-text {
+  font-size: 18px;
+  height: 24px;
+}
+
+.slider__item-link {
+  font-family: "Cuprum", Arial, sans-serif;
+  text-transform: uppercase;
+  font-size: 14px;
+  line-height: 18px;
+  background-color: var(--basic-red);
+  color: var(--basic-background);
+}
+
+.slider__item-link:active {
+  background-color: var(--error);
+}
+
+.slider__navigation-btn {
+  display: inline-block;
+  font-size: 0;
+  width: 22px;
+  height: 40px;
+  background-repeat: no-repeat;
+  background-color: transparent;
+  z-index: 100;
+}
+
+.slider__radio:focus + .slider__item-container .slider__navigation-btn {
+  outline: 2px solid var(--special-blue);
+}
+
+.slider__navigation-btn--back {
+  background-image: url("../img/icon-left.svg");
+
+}
+
+.slider__navigation-btn--forward {
+  background-image: url("../img/icon-right.svg");
+}
+
+.slider__navigation-radio {
+  display: inline-block;
+  font-size: 0;
+  background-color: var(--basic-background);
+  width: 6px;
+  height: 6px;
+  border: 2px solid var(--basic-background);
+  border-radius: 50%;
+}
+
+.slider__radio--first:checked ~ .slider__item-container .slider__navigation-radio--first {
+  background-color: var(--basic-red);
+}
+
+.slider__radio--second:checked ~ .slider__item-container .slider__navigation-radio--second {
+  background-color: var(--basic-red);
+}
+
 /* О компании  */
 .company-description__title {
   font-family: "Cuprum", Arial, sans-serif;
@@ -342,7 +540,7 @@ img {
   background-color: var(--error);
 }
 
-/*--------catalog-main */
+/* Хлебные крошки */
 .bread-crumbs {
   background: var(--basic-background);
   list-style: none;
@@ -376,7 +574,15 @@ img {
   color: var(--basic-darkblue);
 }
 
-/* Фильтр производители */
+/* Фильтры */
+.filters__title {
+  font-size: 13px;
+  line-height: 18px;
+  text-transform: uppercase;
+  background-color: var(--special-white-background);
+  font-weight: normal;
+}
+
 .filters__group {
   background-color: var(--basic-background);
   border: none;
@@ -388,7 +594,24 @@ img {
 }
 
 .filters__group-title {
+  font-size: 17px;
+  line-height: 30px;
   font-weight: bold;
+}
+
+.filters__slider-container {
+  width: 220px;
+  height: 80px;
+  background-color: var(--special-white-background);
+}
+
+.filters__min-price,
+.filters__max-price {
+  font-size: 17px;
+  line-height: 18px;
+  background-color: var(--special-white-background);
+  border: none;
+  text-align: center;
 }
 
 .filters__list {
@@ -437,9 +660,245 @@ img {
   text-transform: uppercase;
 }
 
+/* Сортировка */
+.sorting {
+  background-color: var(--special-white-background);
+}
+.sorting__title {
+  font-size: 13px;
+  line-height: 18px;
+  text-transform: uppercase;
+  font-weight: normal;
+}
+
+.sorting__list {
+  list-style: none;
+}
+
+.sorting__link {
+  color: var(--black-opacity);
+  font-family: "PT Sans", Arial, sans-serif;
+  text-transform: uppercase;
+  border-bottom: 1px dotted var(--basic-red);
+}
+.sorting__link:hover {
+  color: var(--black);
+  border-bottom: 1px solid var(--basic-red);
+}
+
+.sorting__link:not([href]) {
+  color: var(--basic-red);
+  border: none;
+
+}
+
+.sorting__mode-list {
+  list-style: none;
+}
+
+.sorting__mode-item {
+  display: inline-block;
+  width: 11px;
+  height: 10px;
+  font-size: 0;
+}
+
+.sorting__icon:hover {
+  fill: var(--black);
+}
+
+.sorting__mode-link:not([href]) .sorting__icon{
+  fill: var(--basic-red);
+}
+
+/* Популярные производители */
+.popular-manufacturers {
+  background-color: var(--basic-background);
+}
+
+.popular-manufacturers__title-container {
+  background-color: var(--special-heading-background);
+}
+
+.popular-manufacturers__title {
+  font-family: "Cuprum", Arial, sans-serif;
+  font-size: 30px;
+  line-height: 30px;
+  text-transform: uppercase;
+  color: var(--basic-darkblue);
+  font-weight: normal;
+}
+
+.popular-manufacturers__all-manufactures-link {
+  font-family: "Cuprum", Arial, sans-serif;
+  text-transform: uppercase;
+  font-size: 14px;
+  line-height: 18px;
+  background-color: var(--basic-red);
+  color: var(--basic-background);
+}
+
+.popular-manufacturers__all-manufactures-link:active {
+  background-color: var(--error);
+}
+
+.popular-manufacturers__list {
+  list-style: none;
+}
+
+.popular-manufacturers__link:hover {
+  box-shadow: 0px 4px 20px var(--shadow);
+}
+.popular-manufacturers__link:active {
+  opacity: 50%;
+}
+
+/* Сервисы  */
+.services {
+  background-color: var(--basic-white);
+}
+.services__title {
+  font-family: "Cuprum", Arial, sans-serif;
+  text-transform: uppercase;
+  font-weight: normal;
+  font-size: 30px;
+  line-height: 30px;
+}
+
+.services__text {
+  font-family: "PT Sans", Arial, sans-serif;
+  font-size: 13px;
+  line-height: 24px;
+}
+
+.services__item-name {
+  font-weight: bold;
+  font-size: 21px;
+  line-height: 30px;
+  color: var(--basic-background);
+  background-color: var(--basic-darkblue);
+}
+
+.services__list {
+  list-style: none;
+}
+
+.services__description-item {
+  display: none;
+}
+
+.services__radio--delivery:checked ~ .services__description-list .services__description-item--delivery {
+  display: block;
+}
+
+.services__radio--guarantee:checked ~ .services__description-list .services__description-item--guarantee {
+  display: block;
+}
+
+.services__radio--credit:checked ~ .services__description-list .services__description-item--credit {
+  display: block;
+}
+
+.services__radio--delivery:checked ~ .services__list .services__item-name--delivery,
+.services__radio--guarantee:checked ~ .services__list .services__item-name--guarantee,
+.services__radio--credit:checked ~ .services__list .services__item-name--credit {
+  color: var(--basic-darkblue);
+  background-color: var(--basic-background);
+}
+.services__radio--delivery:not(:checked) ~ .services__list .services__item-name--delivery:hover,
+.services__radio--guarantee:not(:checked) ~ .services__list .services__item-name--guarantee:hover,
+.services__radio--credit:not(:checked) ~ .services__list .services__item-name--credit:hover {
+  background-color: var(--special-background);
+}
+
+.services__radio:focus ~ .services__list .services__item-name {
+  outline: 2px solid var(--special-blue);
+}
+
+.services__description-title {
+  font-family: "Cuprum", Arial, sans-serif;
+  color: var(--basic-darkblue);
+  text-transform: uppercase;
+  font-size: 30px;
+  line-height: 30px;
+  font-weight: normal;
+}
+
+.services__description-title::after {
+  content: "";
+  display: inline-block;
+  background-repeat: no-repeat ;
+}
+
+.services__description-title--delivery::after {
+  width: 468px;
+  height: 261px;
+  background-image: url("../img/delivery.png");
+
+}
+.services__description-title--guarantee::after {
+  width: 389px;
+  height: 283px;
+  background-image: url("../img/guarantee.png");
+
+}
+.services__description-title--credit::after {
+  width: 465px;
+  height: 285px;
+  background-image: url("../img/credit.png");
+
+}
+
+.services__description-text {
+  font-family: "PT Sans", Arial, sans-serif;
+  font-size: 13px;
+  line-height: 24px;
+
+}
+
+.services__feedback-link {
+  font-family: "Cuprum", Arial, sans-serif;
+  text-transform: uppercase;
+  font-size: 14px;
+  line-height: 18px;
+  background-color: var(--basic-red);
+  color: var(--basic-background);
+
+}
+
+.services__feedback-link:active {
+  background-color: var(--error);
+
+}
+
 /* Каталог */
 .product-catalog {
   background-color: var(--basic-background);
+}
+
+.product-catalog__title-container {
+  background-color: var(--special-heading-background);
+}
+
+.product-catalog__title {
+  font-family: "Cuprum", Arial, sans-serif;
+  font-size: 30px;
+  line-height: 30px;
+  text-transform: uppercase;
+  color: var(--basic-darkblue);
+  font-weight: normal;
+}
+
+.product-catalog__full-catalog-link {
+  font-family: "Cuprum", Arial, sans-serif;
+  text-transform: uppercase;
+  font-size: 14px;
+  line-height: 18px;
+  background-color: var(--basic-red);
+  color: var(--basic-background);
+}
+.product-catalog__full-catalog-link:active {
+  background-color: var(--error);
 }
 
 .product-catalog__list {
@@ -512,6 +971,27 @@ img {
 .product-catalog__item-link-marker:active {
   opacity: 50%;
 }
+
+.product-catalog__page-list {
+  list-style: none;
+  font-family: "PT Sans", Arial, sans-serif;
+  font-size: 13px;
+  line-height: 18px;
+}
+
+.product-catalog__page-link {
+  text-align: center;
+  color: var(--black);
+  text-transform: uppercase;
+  background-color: var(--basic-background);
+}
+
+.product-catalog__page-link:not([href]) {
+  color: var(--basic-background);
+  background-color: var(--basic-red);
+}
+
+
 
 /* Футер */
 .footer {
