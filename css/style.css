@@ -75,6 +75,15 @@ img {
   clip: rect(0 0 0 0)
 }
 
+.page-body {
+  display: grid;
+}
+
+.container {
+  width: 940px;
+  margin: 0 auto;
+}
+
 /* Шапка */
 .header {
   padding-bottom: 60px;
@@ -86,18 +95,18 @@ img {
 
 /* Меню шапки */
 .header__menu {
-  height: 42px;
+  min-height: 42px;
   background-color: var(--special-background);
 }
 
-.header__menu-container {
-  margin: 0 auto;
+.header__wrapper {
   display: flex;
-  width: 940px;
+
 }
 
 .header__logo {
   min-width: 220px;
+  margin-bottom: -5px;
   padding-top: 12px;
   min-height: 47px;
   text-align: center;
@@ -255,12 +264,6 @@ img {
   color: var(--basic-red);
   font-size: 16px;
   line-height: 23px;
-}
-
-.header__common-container {
-  display: flex;
-  justify-content: space-between;
-  width: 620px;
 }
 
 .header__container-info {
@@ -422,8 +425,6 @@ img {
 /* Навигация шапки */
 
 .first-navigation {
-  width: 940px;
-  margin: 0 auto;
   background-color: var(--basic-darkblue);
 }
 
@@ -441,6 +442,7 @@ img {
 .first-navigation__link {
   display: block;
   padding-top: 16px;
+  padding-bottom: 20px;
   min-height: 60px;
   color: var(--basic-background);
   text-align: center;
@@ -652,11 +654,9 @@ img {
   padding-top: 70px;
   padding-bottom: 70px;
   display: flex;
+  justify-content: space-between;
 }
 
-.company-description {
-  width: 640px;
-}
 
 .company-description__title {
   margin: 0;
@@ -714,6 +714,7 @@ img {
   display: block;
   width: 220px;
   padding-top: 11px;
+  padding-bottom: 9px;
   min-height: 38px;
   margin-top: 20px;
   text-align: center;
@@ -764,6 +765,7 @@ img {
   min-height: 38px;
   text-align: center;
   padding-top: 11px;
+  padding-bottom: 9px;
   margin-top: 25px;
   font-family: "Cuprum", Arial, sans-serif;
   text-transform: uppercase;
@@ -974,6 +976,7 @@ img {
   min-height: 38px;
   text-align: center;
   padding-top: 10;
+  padding-bottom: 10;
   background-color: var(--basic-background);
   border: 1px solid var(--lightgrey);
   font-family: "PT Sans", Arial, sans-serif;
@@ -1537,16 +1540,15 @@ img {
   line-height: 24px;
 }
 
-.footer__menu-container {
-  width: 940px;
-  margin: 0 auto;
+.footer__menu-wrapper {
   min-height: 193px;
   display: flex;
   flex-wrap: wrap;
+  justify-content: space-between;
 }
 
-.footer__contacts-container {
-  width: 380px;
+.footer__contacts-wrapper {
+  width: 324px;
 }
 
 .footer__logo {
@@ -1649,13 +1651,14 @@ img {
 }
 
 .footer__social-link {
-  display: block;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   width: 44px;
   height: 44px;
   font-size: 0;
   border-radius: 50%;
   background-color: var(--special--darkblue);
-  background-repeat: no-repeat;
   background-position: 50%;
   margin-left: 1px;
 }
@@ -1663,18 +1666,6 @@ img {
 .footer__social-link:hover,
 .footer__social-link:active {
   background-color: var(--basic-red);
-}
-
-.footer__social-link--vkontakte {
-  background-image: url("../img/icon-vk.svg");
-}
-
-.footer__social-link--facebook {
-  background-image: url("../img/icon-fb.svg");
-}
-
-.footer__social-link--instargam {
-  background-image: url("../img/icon-insta.svg");
 }
 
 .footer__creator-info-container {
