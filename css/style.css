@@ -935,7 +935,7 @@ img {
   line-height: 24px;
 }
 
-.company-contacts__map {
+.company-contacts__map-link {
   display: flex;
   flex-wrap: wrap;
   margin-top: 32px;
@@ -2174,6 +2174,10 @@ img {
 }
 
 /* Всплывающие окна */
+.popup-show {
+  animation: bounce 0.6s;
+}
+
 .popup-wrapper {
   position: absolute;
   top: 0;
@@ -2336,16 +2340,28 @@ img {
 
 }
 
+.feedback__error {
+  animation: shake 0.6s;
+}
+
+
 /* Добавление в корзину */
 .basket-notification {
   position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 100;
+}
+
+.basket-notification-wrapper {
+  position: relative;
   width: 620px;
-  left: 50%;
-  top: 50%;
+  margin: 0 auto;
+  margin-top: 335px;
   border-top: 7px solid var(--basic-red);
-  transform: translate(-50%, -50%);
   box-shadow: 0px 4px 20px var(--shadow);
   background-color: var(--basic-background);
+
 }
 
 .basket-notification__text {
@@ -2436,3 +2452,47 @@ img {
   min-height: 21px;
   background-image: url("../img/icon-close.svg");
 }
+
+/* Анимации */
+
+@keyframes bounce {
+  0% {
+    transform: translateY(-2000px);
+  }
+
+  70% {
+    transform: translateY(30px);
+  }
+
+  90% {
+    transform: translateY(-10px);
+  }
+
+  100% {
+    transform: translateY(0);
+  }
+}
+
+@keyframes shake {
+  0%,
+  100% {
+    transform: translateX(0);
+  }
+
+  10%,
+  30%,
+  50%,
+  70%,
+  90% {
+    transform: translateX(-10px);
+  }
+
+  20%,
+  40%,
+  60%,
+  80% {
+    transform: translateX(10px);
+  }
+}
+
+
