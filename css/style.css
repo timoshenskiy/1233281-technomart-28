@@ -1018,7 +1018,7 @@ img {
   border: 1px solid var(--basic-red);
   border-left: 24px solid var(--basic-red);
   left: 0;
-  top: 12px;
+  top: 13px;
   background-color: var(--basic-red);
 }
 
@@ -1776,8 +1776,6 @@ img {
 }
 
 .services__description-item {
-  background-image: url("../img/delivery.png");
-  background-position: 100% 20px;
   background-repeat: no-repeat;
   display: none;
 }
@@ -1785,17 +1783,20 @@ img {
 .services__radio--delivery:checked ~ .services__description-list .services__description-item--delivery {
   display: block;
   min-height: 188px;
+  background-position: 100% 20px;
   background-image: url("../img/delivery.png");
 }
 
 .services__radio--guarantee:checked ~ .services__description-list .services__description-item--guarantee {
   display: block;
   min-height: 188px;
+  background-position: 100% 0;
   background-image: url("../img/guarantee.png");
 }
 .services__radio--credit:checked ~ .services__description-list .services__description-item--credit {
   display: block;
   min-height: 188px;
+  background-position: 100% 0;
   background-image: url("../img/credit.png");
 }
 
@@ -2483,6 +2484,7 @@ img {
   border-top: 7px solid var(--basic-red);
   -webkit-box-shadow: 0px 4px 20px var(--shadow);
   box-shadow: 0px 4px 20px var(--shadow);
+  z-index: 100;
 }
 
 .big-map__close-btn {
@@ -2587,7 +2589,8 @@ img {
   padding-top: 5px;
   padding-bottom: 5px;
   padding-left: 10px;
-  border: 2px solid var(--lightgrey);
+  color: var(--basic-darkgrey);
+  border: 2px solid var(--basic-lightgrey);
   border-radius: 2px;
 }
 
@@ -2595,11 +2598,12 @@ img {
   display: block;
   width: 100%;
   min-height: 114px;
-  padding-top: 5px;
+  padding-top: 10px;
   padding-bottom: 5px;
   padding-left: 10px;
   resize: none;
-  border: 2px solid var(--lightgrey);
+  color: var(--basic-darkgrey);
+  border: 2px solid var(--basic-lightgrey);
   border-radius: 2px;
 }
 
@@ -2681,8 +2685,8 @@ img {
   min-height: 66px;
   margin: 0;
   padding: 0;
-  margin-top: 55px;
-  margin-left: 82px;
+  margin-top: 50px;
+  margin-left: 80px;
   margin-bottom: 49px;
   font-family: "Cuprum", Arial, sans-serif;
   font-size: 24px;
@@ -2695,7 +2699,7 @@ img {
   display: block;
   width: 66px;
   min-height: 66px;
-  margin-right: 27px;
+  margin-right: 29px;
   background-image: url("../img/icon-mark.svg");
 }
 
@@ -2710,7 +2714,7 @@ img {
 .basket-notification__link {
   display: block;
   float: left;
-  width: 195px;
+  width: 192px;
   min-height: 38px;
   padding-top: 10px;
   padding-bottom: 10px;
