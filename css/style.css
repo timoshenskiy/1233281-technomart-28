@@ -41,6 +41,7 @@
   --main-color-first-slider-image: #927f6e;
   --main-color-second-slider-image: #694c3e;
   --form-background: #f4f4f4;
+  --form-button-background: #f1f1f1;
 }
 
 *,
@@ -2708,7 +2709,7 @@ img {
   min-height: 112px;
   padding-top: 37px;
   padding-left: 114px;
-  background-color: #f1f1f1;
+  background-color: var(--form-button-background);
 }
 
 .basket-notification__link {
