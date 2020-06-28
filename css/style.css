@@ -40,6 +40,7 @@
   --new: #ec3504;
   --main-color-first-slider-image: #927f6e;
   --main-color-second-slider-image: #694c3e;
+  --form-background: #f4f4f4;
 }
 
 *,
@@ -219,7 +220,7 @@ img {
   width: 450px;
   margin: 0;
   padding: 0;
-  font-family: Cuprum, sans-serif;
+  font-family: "Cuprum", Arial, sans-serif;
   list-style: none;
 }
 
@@ -712,6 +713,7 @@ img {
 }
 
 .categories__item--slider {
+  position: relative;
   -ms-grid-column: 1;
   grid-column-start: 1;
   -ms-grid-column-span: 2;
@@ -805,25 +807,26 @@ img {
 }
 
 /* Слайдер */
-.slider__item-wrapper {
+.slider__item {
   display: none;
 }
 
-.slider__radio:checked ~ .slider__item-wrapper {
+.slider__radio--first:checked ~ .categories__slider .slider__item--first {
   display: block;
   width: 620px;
   min-height: 266px;
   background-repeat: no-repeat;
-}
-
-.slider__radio--first:checked ~ .slider__item-wrapper {
   background-color: var(--main-color-first-slider-image);
-  background-image: url("../img/slider-rotary-hammers.jpg");
+  background-image: url("../img/slider-drill.jpg");
 }
 
-.slider__radio--second:checked ~ .slider__item-wrapper {
+.slider__radio--second:checked ~ .categories__slider .slider__item--second {
+  display: block;
+  width: 620px;
+  min-height: 266px;
+  background-repeat: no-repeat;
   background-color: var(--main-color-second-slider-image);
-  background-image: url("../img/slider-drill.jpg");
+  background-image: url("../img/slider-rotary-hammers.jpg");
 }
 
 .slider__list {
@@ -858,6 +861,10 @@ img {
 }
 
 .slider__middle-wrapper {
+  position: absolute;
+  top: 122px;
+  left: 24px;
+  width: 576px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -866,9 +873,6 @@ img {
   -webkit-box-pack: justify;
   -ms-flex-pack: justify;
   justify-content: space-between;
-  margin-top: 18px;
-  padding-left: 24px;
-  padding-right: 20px;
 }
 
 .slider__navigation-btn {
@@ -880,7 +884,7 @@ img {
   z-index: 100;
 }
 
-.slider__radio:focus + .slider__item-wrapper .slider__navigation-btn {
+.slider__radio:focus ~ .slider__middle-wrapper .slider__navigation-btn {
   outline: 2px solid var(--special-blue);
 }
 
@@ -892,19 +896,12 @@ img {
   background-image: url("../img/icon-right.svg");
 }
 
-.slider__bottom-wrapper {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-wrap: wrap;
-  flex-wrap: wrap;
-  margin-top: 39px;
-}
-
 .slider__item-link {
+  position: absolute;
+  left: 24px;
+  bottom: 27px;
   display: block;
   width: 192px;
-  margin-left: 24px;
   padding-top: 11px;
   padding-bottom: 9px;
   font-family: "Cuprum", Arial, sans-serif;
@@ -921,6 +918,9 @@ img {
 }
 
 .slider__radio-btn-wrapper {
+  position: absolute;
+  left: 295px;
+  bottom: 36px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -930,25 +930,25 @@ img {
   -ms-flex-pack: justify;
   justify-content: space-between;
   width: 30px;
-  margin-left: 79px;
-  margin-top: 19px;
 }
 
 .slider__navigation-radio {
   display: block;
   width: 10px;
   height: 10px;
+  margin: 0;
+  padding: 0;
   font-size: 0;
   background-color: var(--basic-background);
   border: 2px solid var(--basic-background);
   border-radius: 50%;
 }
 
-.slider__radio--first:checked ~ .slider__item-wrapper .slider__navigation-radio--first {
+.slider__radio--first:checked ~ .slider__radio-btn-wrapper .slider__navigation-radio--first {
   background-color: var(--basic-red);
 }
 
-.slider__radio--second:checked ~ .slider__item-wrapper .slider__navigation-radio--second {
+.slider__radio--second:checked ~ .slider__radio-btn-wrapper .slider__navigation-radio--second {
   background-color: var(--basic-red);
 }
 
@@ -2553,7 +2553,7 @@ img {
   flex-grow: 1;
   width: 100%;
   min-height: 112px;
-  background-color: #f4f4f4;
+  background-color: var(--form-background);
 }
 
 .feedback__input-group {
